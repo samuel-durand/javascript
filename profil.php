@@ -3,6 +3,7 @@ session_start();
 // Inclusion du fichier de configuration de la base de données
 include('config.php');
 include('update.login.php');
+include('update.pass.php');
 
 // Vérification si l'utilisateur est connecté
 if (isset($_SESSION['login'])) {
@@ -43,12 +44,24 @@ $_SESSION['login'];
 <form id="mon-formulaire" method="POST">
     <label for="login">Nouveau login :</label>
     <input type="text" id="login" name="login" required>
+
+
     <button type="submit">Mettre à jour</button>
   </form>
 
+  <form id="mon-formulaire-password" method="POST">
+  <label for="old-password">Ancien mot de passe :</label>
+  <input type="password" id="old-password" name="old-password" required>
+
+  <label for="new-password">Nouveau mot de passe :</label>
+  <input type="password" id="new-password" name="new-password" required>
+
+  <button type="submit">Changer de mot de passe</button>
+</form>
+
+
 <button id="btn-deconnexion">Se déconnecter</button>
 
-<script src="update.js"></script>
 <script src="logout.js"></script>
 </body>
 </html>
