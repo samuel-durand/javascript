@@ -2,6 +2,7 @@
 session_start();
 // Inclusion du fichier de configuration de la base de données
 include('config.php');
+include('update.login.php');
 
 // Vérification si l'utilisateur est connecté
 if (isset($_SESSION['login'])) {
@@ -39,8 +40,15 @@ $_SESSION['login'];
 <body>
 <h1><?php echo $bienvenue ?></h1>
 
+<form id="mon-formulaire" method="POST">
+    <label for="login">Nouveau login :</label>
+    <input type="text" id="login" name="login" required>
+    <button type="submit">Mettre à jour</button>
+  </form>
+
 <button id="btn-deconnexion">Se déconnecter</button>
 
+<script src="update.js"></script>
 <script src="logout.js"></script>
 </body>
 </html>
