@@ -10,15 +10,40 @@ if (isset($_SESSION['login'])) {
   $stmt->execute(['login' => $_SESSION['login']]);
   $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-  // Affichage de la page pour l'utilisateur connecté
-  echo 'Bienvenue, ' . $user['login'] . ' !';
+
 } else {
   // Redirection vers la page de connexion
+  header('Location: login.php');
   exit();
 }
+
+
+if (date("H") < 18)
+$bienvenue = "bonjour et bienvenue " .
+$_SESSION['login'];
+else 
+$bienvenue = "bonsoir et bienvenue " .
+$_SESSION['login'];
+
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>profil</title>
+</head>
+<body>
+<h1><?php echo $bienvenue ?></h1>
 
+<button id="btn-deconnexion">Se déconnecter</button>
+
+<script src="logout.js"></script>
+</body>
+</html>
 
 
 
