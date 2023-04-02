@@ -1,5 +1,5 @@
 // Sélection de l'élément du formulaire et ajout d'un écouteur d'événements sur la soumission
-document.querySelector('#mon-formulaire').addEventListener('submit', (event) => {
+document.querySelector('#mon-formulaire-update-log').addEventListener('submit', (event) => {
     event.preventDefault(); // Empêche le rechargement de la page
   
     // Récupération des données du formulaire

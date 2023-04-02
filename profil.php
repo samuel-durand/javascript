@@ -35,19 +35,19 @@ $_SESSION['login'];
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="update.js"></script>
   <title>profil</title>
+  
 </head>
 <body>
 <h1><?php echo $bienvenue ?></h1>
 
-<form id="mon-formulaire" method="POST">
+<form id="mon-formulaire-update-log" method="POST">
     <label for="login">Nouveau login :</label>
     <input type="text" id="login" name="login" required>
 
 
     <button type="submit">Mettre à jour</button>
-  </form>
+</form>
 
   <form id="mon-formulaire-reset" method="POST">
   <label for="current_password">Mot de passe actuel :</label>
@@ -62,6 +62,8 @@ $_SESSION['login'];
 
 
 <button id="btn-deconnexion">Se déconnecter</button>
+<script src="update.js"></script>
+
 <script src="update.pass.js"></script>
 <script src="logout.js"></script>
 
