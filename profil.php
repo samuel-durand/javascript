@@ -49,15 +49,16 @@ $_SESSION['login'];
     <button type="submit">Mettre à jour</button>
   </form>
 
-  <form id="mon-formulaire-password" method="POST">
-  <label for="old-password">Ancien mot de passe :</label>
-  <input type="password" id="old-password" name="old-password" required>
+  <form  method="POST">
+  <label for="current_password">Mot de passe actuel :</label>
+  <input type="password" id="current_password" name="current_password" required>
 
-  <label for="new-password">Nouveau mot de passe :</label>
-  <input type="password" id="new-password" name="new-password" required>
+  <label for="new_password">Nouveau mot de passe :</label>
+  <input type="password" id="new_password" name="new_password" required>
 
-  <button type="submit">Changer de mot de passe</button>
+  <button type="submit">Mettre à jour le mot de passe</button>
 </form>
+
 
 
 <button id="btn-deconnexion">Se déconnecter</button>
