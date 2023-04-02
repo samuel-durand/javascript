@@ -29,6 +29,7 @@ $_SESSION['login'];
 
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,13 +63,14 @@ $_SESSION['login'];
 
 
 <button id="btn-deconnexion">Se déconnecter</button>
-<script src="update.js"></script>
 
-<script src="update.pass.js"></script>
 <script src="logout.js"></script>
 
 </body>
 </html>
+
+
+
 
 
 

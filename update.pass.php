@@ -1,5 +1,4 @@
 <?php 
-
 // Inclusion du fichier de configuration de la base de données
 include('config.php');
 
@@ -15,16 +14,23 @@ if (isset($_POST['current_password']) && isset($_POST['new_password'])) {
   $stmt->execute(['login' => $login]);
   $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-  // Vérification si l'utilisateur a été trouvé et si le mot de passe actuel est correct
-  if ($user && password_verify($currentPassword, $user['password'])) {
-    // Le mot de passe actuel est correct, on peut mettre à jour le mot de passe
+  // Vérification si le mot de passe actuel est correct
+  if (password_verify($currentPassword, $user['password'])) {
+    // Le mot de passe actuel est correct, on peut le mettre à jour
     $stmt = $pdo->prepare('UPDATE users SET password = :newPassword WHERE login = :login');
     $stmt->execute(['newPassword' => password_hash($newPassword, PASSWORD_DEFAULT), 'login' => $login]);
-    echo 'Le mot de passe a bien été mis à jour.';
+    $message = 'Le mot de passe a bien été mis à jour.';
+    $response = ['message' => $message];
+    echo json_encode($response);
   } else {
-    echo 'Mauvais mot de passe actuel.';
+    // Le mot de passe actuel est incorrect
+    $error = 'Le mot de passe actuel est incorrect.';
+    $response = ['error' => $error];
+    echo json_encode($response);
   }
 }
+
+
 ?>
 
 

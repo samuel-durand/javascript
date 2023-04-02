@@ -6,7 +6,7 @@ document.querySelector('#mon-formulaire-reset').addEventListener('submit', (even
     const formData = new FormData(event.target);
   
     // Envoi de la requête
-    fetch('update.password.php', {
+    fetch('update.pass.php', {
       method: 'POST',
       body: formData
     })
@@ -24,4 +24,3 @@ document.querySelector('#mon-formulaire-reset').addEventListener('submit', (even
       console.error(error);
     });
   });
-  
