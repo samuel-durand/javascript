@@ -34,10 +34,8 @@ $_SESSION['login'];
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <script src="update.js"></script>
-  <script src="update.pass.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <script src="update.js"></script>
   <title>profil</title>
 </head>
 <body>
@@ -64,7 +62,7 @@ $_SESSION['login'];
 
 
 <button id="btn-deconnexion">Se déconnecter</button>
-
+<script src="update.pass.js"></script>
 <script src="logout.js"></script>
 
 </body>
